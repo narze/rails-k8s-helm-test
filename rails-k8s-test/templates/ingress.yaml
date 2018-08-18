@@ -6,7 +6,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app: {{ template "rails-k8s-test.name" . }}
+    app: {{ template "rails-k8s-test.fullname" . }}
     chart: {{ template "rails-k8s-test.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
