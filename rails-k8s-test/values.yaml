@@ -23,7 +23,13 @@ resources:
     cpu: 100m
     memory: 256Mi
 
-ingress: {}
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  path: /
+  hosts:
+    - "" # Domain name here, leave blank if using ip
 
 app:
   secretKeyBase: 217b1d447243d41659eb095579b41655ac10b36a737ca4a452e16aba52d643ef16f656de1e246d49e2bf747fa9d73deb59ee9464aa3dfca7c2e5a87fe7b9493e
