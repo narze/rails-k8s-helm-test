@@ -4,7 +4,7 @@ metadata:
   name: {{ template "rails-k8s-test.fullname" . }}
   labels:
     app: {{ template "rails-k8s-test.fullname" . }}
-    chart: {{ template "rails-k8s-test.chart" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
