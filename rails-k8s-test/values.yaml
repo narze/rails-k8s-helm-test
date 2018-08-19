@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: rails-k8s-test
+  repository: narze/rails-k8s-test
   tag: 0.1.0
   pullPolicy: IfNotPresent
 
