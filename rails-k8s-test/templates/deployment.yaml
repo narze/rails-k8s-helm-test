@@ -19,12 +19,12 @@ spec:
         - containerPort: {{ .Values.service.internalPort }}
         env:
         - name: DB_HOST
-          value: {{ template "postgresql.fullname" . }}
+          value: "{{ template "stolon.fullname" . }}-proxy"
         - name: DB_PASS
           valueFrom:
             secretKeyRef:
-              name: {{ template "postgresql.fullname" . }}
-              key: postgres-password
+              name: {{ template "stolon.fullname" . }}
+              key: pg_su_password
         - name: SECRET_KEY_BASE
           value: {{ .Values.app.secretKeyBase }}
         resources:
