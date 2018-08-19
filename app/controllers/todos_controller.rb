@@ -1,6 +1,12 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
+  def factory
+    @todo = Todo.create(done: false, title: SecureRandom.uuid)
+    flash[:notice] = "Todo ##{@todo.id} `#{@todo.title}` created on #{@todo.created_at}"
+    render :show
+  end
+
   # GET /todos
   # GET /todos.json
   def index
